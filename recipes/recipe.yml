@@ -3,11 +3,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: bluedrewski
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: Drewskis happy images
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 41 # latest is also supported if you want new updates ASAP
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -20,15 +20,35 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/secureblue/hardened-chromium/repo/fedora-%OS_VERSION%/secureblue-hardened-chromium-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/secureblue/bubblejail/repo/fedora-%OS_VERSION%/secureblue-bubblejail-fedora-%OS_VERSION%.repo
     install:
       - micro
       - starship
+      - hardened-chromium
+      - hardened-chromium-subresource-filter
+      - distrobox
+      - virt-manager 
+      - libvirt
+      - bubblejail
+      - usbguard
+      - usbguard-notifier
+      - setroubleshoot
+      - setools
+  - fscrypt
+      - vim
+      - pam-u2f
+      - pam_yubico
+      - pamu2fcfg
+      - yubikey-manager
+      - google-noto-fonts-all
+
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
+      - virtualbox-guest-additions
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
@@ -36,9 +56,26 @@ modules:
       install:
         - org.mozilla.firefox
         - org.gnome.Loupe
+        - org.signal.Signal
+        - com.discordapp.Discord
+        - im.riot.Riot
+        - org.telegram.desktop
+        - org.libreoffice.LibreOffice
+        - com.github.tchx84.Flatseal
+        - com.mattjakeman.ExtensionManager
+        - com.usebottles.bottles
+        - net.lutris.Lutris
+        - com.github.tchx84.Flatseal
+        - net.lutris.Lutris
+        - com.usebottles.bottles
+        - io.github.dvlv.boxbuddyrs
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
 
+ - type: script
+      scripts:
+        - enableautoupdate.sh
+        - enableflatpackupdate.sh
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
