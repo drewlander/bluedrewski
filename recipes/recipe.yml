@@ -69,6 +69,7 @@ modules:
         - net.lutris.Lutris
         - com.usebottles.bottles
         - io.github.dvlv.boxbuddyrs
+        - org.gnome.Evolution
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
