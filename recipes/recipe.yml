@@ -45,6 +45,7 @@ modules:
       - pamu2fcfg
       - yubikey-manager
       - google-noto-fonts-all
+      - headsetcontrol
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -72,6 +73,7 @@ modules:
         - com.usebottles.bottles
         - io.github.dvlv.boxbuddyrs
         - org.gnome.Evolution
+        - org.telegram.desktop
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
@@ -80,5 +82,32 @@ modules:
     scripts:
       - enableautoupdate.sh
       - enableflatpackupdate.sh
+
+    - type: script
+      scripts:
+        - installproprietarypackages.sh
+    - type: rpm-ostree
+      install:
+      - heif-pixbuf-loader
+      - ffmpeg
+      - ffmpeg-libs
+      - ffmpegthumbnailer
+      - pipewire-libs-extra
+      - libfdk-aac
+      - gstreamer1-plugins-ugly  
+
+      remove:
+      - gstreamer1-plugins-ugly-free
+      - fdk-aac-free
+      - ffmpeg-free
+      - libavcodec-free  
+      - libavdevice-free
+      - libavfilter-free
+      - libavformat-free  
+      - libavutil-free  
+      - libpostproc-free  
+      - libswresample-free  
+      - libswscale-free  
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
