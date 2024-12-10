@@ -83,31 +83,31 @@ modules:
       - enableautoupdate.sh
       - enableflatpackupdate.sh
 
-    - type: script
-      scripts:
-        - installproprietarypackages.sh
-    - type: rpm-ostree
-      install:
-      - heif-pixbuf-loader
-      - ffmpeg
-      - ffmpeg-libs
-      - ffmpegthumbnailer
-      - pipewire-libs-extra
-      - libfdk-aac
-      - gstreamer1-plugins-ugly  
+  - type: script
+    scripts:
+      - installproprietarypackages.sh
+  - type: rpm-ostree
+    install:
+    - heif-pixbuf-loader
+    - ffmpeg
+    - ffmpeg-libs
+    - ffmpegthumbnailer
+    - pipewire-libs-extra
+    - libfdk-aac
+    - gstreamer1-plugins-ugly  
 
-      remove:
-      - gstreamer1-plugins-ugly-free
-      - fdk-aac-free
-      - ffmpeg-free
-      - libavcodec-free  
-      - libavdevice-free
-      - libavfilter-free
-      - libavformat-free  
-      - libavutil-free  
-      - libpostproc-free  
-      - libswresample-free  
-      - libswscale-free  
+    remove:
+    - gstreamer1-plugins-ugly-free
+    - fdk-aac-free
+    - ffmpeg-free
+    - libavcodec-free  
+    - libavdevice-free
+    - libavfilter-free
+    - libavformat-free  
+    - libavutil-free  
+    - libpostproc-free  
+    - libswresample-free  
+    - libswscale-free  
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
