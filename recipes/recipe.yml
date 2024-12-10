@@ -81,6 +81,7 @@ modules:
         - com.github.tchx84.Flatseal
         - org.gnome.Builder
         - com.visualstudio.code
+        - org.xiphos.Xiphos
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
