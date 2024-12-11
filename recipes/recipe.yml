@@ -47,6 +47,7 @@ modules:
       - google-noto-fonts-all
       - headsetcontrol
       - gnome-text-editor
+      - evince
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -85,6 +86,7 @@ modules:
         - org.mozilla.Thunderbird
         - org.strawberrymusicplayer.strawberry
         - net.mullvad.MullvadBrowser
+        - org.kde.okular
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
