@@ -84,6 +84,7 @@ modules:
         - org.xiphos.Xiphos
         - org.mozilla.Thunderbird
         - org.strawberrymusicplayer.strawberry
+        - net.mullvad.MullvadBrowser
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
