@@ -82,6 +82,7 @@ modules:
         - org.gnome.Builder
         - com.visualstudio.code
         - org.xiphos.Xiphos
+        - org.mozilla.Thunderbird
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
