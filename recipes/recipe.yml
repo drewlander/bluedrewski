@@ -83,6 +83,7 @@ modules:
         - com.visualstudio.code
         - org.xiphos.Xiphos
         - org.mozilla.Thunderbird
+        - org.strawberrymusicplayer.strawberry
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
