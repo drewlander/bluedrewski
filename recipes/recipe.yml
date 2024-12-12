@@ -85,6 +85,9 @@ modules:
         - org.kde.amarok
         - net.mullvad.MullvadBrowser
         - org.kde.okular
+        - virt-manager
+        - libvirt
+
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
