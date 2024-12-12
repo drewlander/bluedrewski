@@ -31,8 +31,6 @@ modules:
       - hardened-chromium
       - hardened-chromium-subresource-filter
       - distrobox
-      - virt-manager 
-      - libvirt
       - bubblejail
       - usbguard
       - usbguard-notifier
@@ -54,6 +52,8 @@ modules:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
       - virtualbox-guest-additions
+      - virt-manager
+      - libvirt
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
@@ -84,11 +84,12 @@ modules:
         - com.visualstudio.code
         - org.xiphos.Xiphos
         - org.mozilla.Thunderbird
-        - org.strawberrymusicplayer.strawberry
+        - org.kde.amarok
         - net.mullvad.MullvadBrowser
         - org.kde.okular
       remove:
         - org.gnome.eog
+        - org.strawberrymusicplayer.strawberry
     user: {} # Also add Flathub user repo, but no user packages
 
   - type: script
