@@ -45,6 +45,8 @@ modules:
       - google-noto-fonts-all
       - headsetcontrol
       - gnome-text-editor
+      - virt-manager
+      - libvirt
       - evince
     remove:
       # example: removing firefox (in favor of the flatpak)
@@ -85,9 +87,6 @@ modules:
         - org.kde.amarok
         - net.mullvad.MullvadBrowser
         - org.kde.okular
-        - virt-manager
-        - libvirt
-
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
