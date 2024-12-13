@@ -24,6 +24,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/secureblue/bubblejail/repo/fedora-%OS_VERSION%/secureblue-bubblejail-fedora-%OS_VERSION%.repo
       - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
       - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
+      - https://repository.mullvad.net/rpm/stable/mullvad.repo
     install:
       - micro
       - starship
@@ -48,6 +49,7 @@ modules:
       - virt-manager
       - libvirt
       - evince
+      - mullvad-browser
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -100,6 +102,5 @@ modules:
     scripts:
       - multimedia.sh
       - gnomecustom.sh
-      - add_mullvad_sh
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
