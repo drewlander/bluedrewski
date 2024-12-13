@@ -26,7 +26,7 @@ restorecon -Rv /var/log/libvirt
 
 A few errros may come up but it boots fine. I have not been able to dig up why, I am trying to avoid an entire relabel.
 
-
+Note: after rebasing, it takes a little bit for all of the flatpaks to download, they do not download ahead of time
 
 ## Installation
 
