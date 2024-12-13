@@ -1,3 +1,4 @@
 sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
+sudo dnf update
 sudo dnf install mullvad-browser
 
