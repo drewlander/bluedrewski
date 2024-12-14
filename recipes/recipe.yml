@@ -89,7 +89,6 @@ modules:
         - org.xiphos.Xiphos
         - org.mozilla.Thunderbird
         - org.kde.amarok
-        - net.mullvad.MullvadBrowser
         - org.kde.okular
       remove:
         - org.gnome.eog
