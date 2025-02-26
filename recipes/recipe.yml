@@ -6,7 +6,7 @@ name: bluedrewski
 description: Drewskis happy images
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/drewlander/drewblue
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -27,37 +27,10 @@ modules:
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
-      - micro
-      - starship
-      - emacs
-      - hardened-chromium
-      - hardened-chromium-subresource-filter
-      - distrobox
-      - bubblejail
-      - usbguard
-      - usbguard-notifier
-      - setroubleshoot
-      - setools
-      - fscrypt
-      - vim
-      - pam-u2f
-      - pam_yubico
-      - pamu2fcfg
-      - yubikey-manager
-      - google-noto-fonts-all
-      - headsetcontrol
-      - gnome-text-editor
-      - virt-manager
-      - libvirt
-      - evince
-      - mullvad-browser
-      - brave-browser
+
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      - virtualbox-guest-additions
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
@@ -89,7 +62,6 @@ modules:
         - org.xiphos.Xiphos
         - org.mozilla.Thunderbird
         - org.kde.amarok
-        - org.kde.okular
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
