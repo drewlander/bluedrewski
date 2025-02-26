@@ -26,9 +26,6 @@ modules:
       - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
       - https://repository.mullvad.net/rpm/stable/mullvad.repo
       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-    install:
-
-    remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
   - type: default-flatpaks
